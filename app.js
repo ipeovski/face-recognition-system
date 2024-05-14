@@ -43,7 +43,10 @@
   }
   
   video.addEventListener('play', () => {
+    
     const canvas = faceapi.createCanvasFromMedia(video);
+    canvas.getContext('2d').clearRect(0, 0, canvas.width, canvas.height);
+
     document.body.append(canvas);
     canvas.getContext('2d').clearRect(0, 0, canvas.width, canvas.height);
     const displaySize = { width: video.width, height: video.height }
@@ -112,11 +115,11 @@
       } else {
         clearInterval(intervalId);
       }
-    }, 100);
+    }, 0.0000001);
   });
 
   function loadLabeledImages(){
-    const labels = ['Ivan Peovski', 'Nina Dobrev'];
+    const labels = ['Ivan Peovski', 'Joey Tribbiani', 'Monica Geller', 'Rachel Green',];
     return Promise.all(
       labels.map(async label => {
         const descriptions = [];
