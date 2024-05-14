@@ -119,7 +119,9 @@
   });
 
   function loadLabeledImages(){
-    const labels = ['Ivan Peovski', 'Joey Tribbiani', 'Monica Geller', 'Rachel Green',];
+    const labels = ['Ivan Peovski', 'Joey Tribbiani', 'Monica Geller', 'Rachel Green', 
+      'Chandler Bing', 'Ross Geller', 'Phoebe Buffay'
+    ];
     return Promise.all(
       labels.map(async label => {
         const descriptions = [];
